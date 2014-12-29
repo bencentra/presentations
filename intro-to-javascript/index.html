@@ -24,6 +24,19 @@
 			li {
 				margin-bottom: 20px !important;
 			}
+			ul ul {
+				font-size: .75em !important;
+			}
+			ul ul li {
+				margin-bottom: 10px !important;
+			}
+			table tbody tr td {
+				padding: 0 10px !important;
+				font-size: .75em !important;
+			}
+			pre {
+				width: 100% !important;
+			}
 		</style>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -49,7 +62,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section>
+				<section class="center">
 					<h2>Intro to JavaScript</h2>
 					<br>
 					<img height="300" src="img/JavaScript-logo.png">
@@ -65,7 +78,7 @@
 					<h2>What Is JavaScript?</h2>
 					<br>
 					<ul>
-						<li>A programming language used (primarily) for client-side <br>web development:</li>
+						<li>A programming language used (primarily) for <br>client-side web development:</li>
 						<ul>
 							<li>DOM Manipulation</li>
 							<li>User Interaction</li>
@@ -90,16 +103,102 @@
 					<p><small>* Citation Needed</small></p>
 				</section>
 
-				<section>
+				<section class="center">
 					<h2>The Basics</h2>
 					<br>
 					<ul>
 						<li>Using JavaScript</li>
 						<li>Variables &amp; Types</li>
 						<li>Comparators</li>
-						<li>Control Structures</li>
+						<li>Control Flow</li>
 						<li>Using Arrays &amp; Objects</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Using JavaScript</h2>
+					<h5>(In the context of the broswer)</h5>
+					<br>
+					<ul>
+						<li>In a separate file included in an HTML document<br>
+							<pre><code class="hljs xml" data-trim>
+&lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
+							</code></pre>
+						</li>
+						<li>In a &lt;script&gt; block in an HTML document<br>
+							<pre><code class="hljs xml" data-trim>
+&lt;script type="text/javascript"&gt;
+  alert("Hello, World!");
+&lt;/script&gt;
+							</code></pre>
+						<li>In an attribute of a DOM element
+							<pre><code class="hljs xml" data-trim>
+&lt;button onclick="alert('Hello, World!');"&gt;Click Me&lt;/button&gt;
+							</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Variables &amp; Types</h2>
+					<br>
+					<ul>
+						<li>JavaScript is dynamically typed</li>
+						<li>All variables declared with <code>var</code> keyword</li>
+						<li>"Primitive" types</li>
+						<table>
+							<tbody>
+								<tr><td>Numbers</td><td><code> var x = 10;</code></td></tr>
+								<tr><td>Strings</td><td><code> var x = "Hello";</code></td></tr>
+								<tr><td>Booleans</td><td><code> var x = true;</code></td></tr>
+								<tr><td>Null</td><td><code> var x = null;</code></td></tr>
+								<tr><td>Undefined</td><td></td></tr>
+							</tbody>
+						</table>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Variables &amp; Types</h2>
+					<br>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">"Everything is an object"</a> in JavaScript</li>
+						<li>Additional Object Types</li>
+						<table>
+							<tbody>
+								<tr><td>Arrays</td><td><code> var x = [];</code></td></tr>
+								<tr><td>Objects</td><td><code> var x = {key:"value"};</code></td></tr>
+								<tr><td>Regex</td><td><code> var x = /pattern/;</code></td></tr>
+								<tr><td>Functions</td><td><code> var x = function() {};</code></td></tr>
+								<tr><td colspan="2">Maths, Dates, and more!<td></tr>
+							</tbody>
+						</table>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Comparators</h2>
+					<br>
+					<ul>
+						<li>"Falsy" values: 0, false, undefined</li>
+						<li>"Truthy" values: everything else</li>
+						<li>Use "==" to compare value<br>
+							<pre><code class="hljs javascript" data-trim>
+if (x) { console.log("Truthy!"); }
+if (!x) { console.log("Falsy!"); }
+							</code></pre>
+						</li>
+						<li>Use "===" to compare value AND type<br>
+							<pre><code class="hljs javascript" data-trim>
+if (typeof x === "undefined") { console.log("Undefined!"); }
+if (x !== "Hello") { console.log("Strings Don't Match!"); }
+							</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Control Flow</h2>
 				</section>
 
 			</div>
