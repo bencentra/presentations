@@ -286,6 +286,62 @@ if (x !== "Hello") { console.log("Strings Don't Match!"); }
 
 				<section>
 					<h2>Using Arrays</h2>
+					<br>
+					<ul>
+						<li>Arrays are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">"high-level, list-like objects"</a>.</li>
+						<li>Arrays can contain elements of any type!<br>
+							<pre><code class="hljs javascript" data-trim>
+// Instantiate the array
+var arr = new Array("One", "Two", "Three"); // Array Constructor
+var arr = ["One", "Two", "Three"]; // Array Literal
+
+// Common array operations
+var length = arr.length; // Get array length 
+var first = arr[0]; // Access elements by index
+console.log(arr); // Print array
+							</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Using Arrays</h2>
+					<br>
+					<div class="half"><ul>
+						<li>Adding elements<br>
+							<pre><code class="hljs javascript" data-trim>
+var arr = ["One", "Two", "Three"];
+arr.push("Four"); // End
+arr.unshift("Zero"); // Beginning
+arr.splice(1, 0, "One Half"); // Anywhere
+							</code></pre>
+						</li>
+						<li>Removing Elements<br>
+							<pre><code class="hljs javascript" data-trim>
+var arr = ["One", "Two", "Three"];
+arr.pop(); // End
+arr.shift(); // Beginning
+arr.splice(1, 1); // Anywhere
+							</code></pre>
+						</li>
+					</ul></div>
+					<div class="half"><ul>
+						<li>Other usefull stuff<br>
+							<pre><code class="hljs javascript" data-trim>
+var arr = ["One", "Two", "Three"];
+arr.reverse(); // ["Three", "Two", "One"]
+arr.sort(); // ["One", "Three", "Two"]
+arr.sort(function(a,b) {
+  if (a &lt; b) return -1;
+  else if (a &gt; b) return 1;
+  else return 0;
+});
+arr.join(); // "One,Two,Three"
+arr.concat(["Eight", "Nine", "Ten"]);
+arr.indexOf("Three"); // -1 if not found
+							</code></pre>
+						</li>
+					</ul></div>
 				</section>
 
 				<section>
