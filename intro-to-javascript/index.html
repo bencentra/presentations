@@ -42,6 +42,9 @@
 				width: 50%;
 				font-size: .8em !important;
 			}
+			ul.small {
+				font-size: .8em !important;
+			}
 		</style>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -131,8 +134,9 @@
 						<ul>
 							<li>Using JavaScript</li>
 							<li>Variables &amp; Types</li>
+							<li>Operators</li>
 							<li>Control Flow</li>
-							<li>Comparators</li>
+							<li>Truthiness</li>
 							<li>Using Arrays</li>
 							<li>Using Object</li>
 							<li>Using Functions</li>
@@ -198,6 +202,54 @@
 								</tbody>
 							</table>
 						</ul>
+					</section>
+
+					<section>
+						<h2>Operators</h2>
+						<br>
+						<div class="half"><ul>
+							<li>Arithmetic<br>
+								<pre><code class="hljs javascript" data-trim>
+10 + 5; // 15
+10 - 5; // 5
+10 * 5; // 50
+10 / 5; // 2
+10 % 5; // 0
+10++; // 11
+10--; // 9
+"10" + "5"; //"105"
+								</code></pre>
+							</li>
+							<li>Assignment<br>
+								<pre><code class="hljs javascript" data-trim>
+var x = 5; // 5
+x += 5; // 10
+x -= 5; // 5
+x *= 5; // 25
+x /= 5; // 5
+x %= 5; // 0
+								</code></pre>
+							</li>
+						</ul></div>
+						<div class="half"><ul>
+							<li>Comparison<br>
+								<pre><code class="hljs javascript" data-trim>
+5 == 5; // true
+5 === "5"; // false
+5 != 10; // true
+5 !== "5"; // true
+5 &gt; 3; // true
+5 &lt; 10; // true
+5 &gt;= 5; // true
+5 &lt;= 5; // true 
+								</code></pre>
+							</li>
+							<li>"Ternary" Operator<br>
+								<pre><code class="hljs javascript" data-trim>
+(x > 5 ? console.log("more") : console.log("less"));
+								</code></pre>
+							</li>
+						</ul></div>
 					</section>
 
 					<section>
@@ -281,21 +333,23 @@ arr.forEach(function(value, index, array) {
 					</section>
 
 					<section>
-						<h2>Comparators</h2>
+						<h2>Truthiness</h2>
 						<br>
 						<ul>
-							<li>"Falsy" values: <code>0, false, undefined</code></li>
+							<li>"Falsy" values: <code>0, false, undefined, null, NaN</code></li>
 							<li>"Truthy" values: everything else</li>
 							<li>Use "==" or "!=" to compare value<br>
 								<pre><code class="hljs javascript" data-trim>
 if (x == true) { console.log("Truthy!"); } // Shorthand: if (x) {}
 if (x != true) { console.log("Falsy!"); } // Shorthand: if (!x) {}
+if (23 == "23") { console.log("WHAT?!"); } // true...!!!
 								</code></pre>
 							</li>
 							<li>Use "===" or "!==" to compare value AND type<br>
 								<pre><code class="hljs javascript" data-trim>
 if (typeof x === "undefined") { console.log("Undefined!"); }
 if (x !== "Hello") { console.log("Strings Don't Match!"); }
+if (23 === "23") { console.log("WHAT?!"); } // false
 								</code></pre>
 							</li>
 						</ul>
@@ -375,8 +429,8 @@ arr.indexOf("Three"); // -1 if not found
 var car = new Object(); // Object Constructor
 
 // Assign some "properties"
-car["make"] = "Tesla"; // Square bracket notation
-car.model = "Roadster"; // Dot notation
+car["make"] = "Tesla"; // Square bracket notation (preferred)
+car.model = "Roadster"; // Dot notation (watch for keywords!)
 car.year = 2014; // Keys can be any type
 
 // Create a "method"
@@ -435,46 +489,127 @@ button.addEventListener("click", function() { ... });
 
 					<section>
 						<h2>DOM Manipulation</h2>
+						<br>
+						<ul>
+							<li>What is the DOM?</li>
+							<li>Selecting Elements</li>
+							<li>Updating Elements</li>
+							<li>Creating Elements</li>
+							<li><b>Example</b></li>
+						</ul>
 					</section>
 
-				</section>
+				</section> <!-- END "DOM MANIPULATION" -->
 
-				<section class="stack present" data-background="#FFFFDD"> <!-- START "DOM MANIPULATION" -->
+				<section class="stack present" data-background="#FFFFDD"> <!-- START "EVENTS & USER INTERACTION" -->
 
 					<section>
 						<h2>Events &amp; User Interaction</h2>
+						<br>
+						<ul>
+							<li>Event Model</li>
+							<li>Mouse Events</li>
+							<li>Keyboard Events</li>
+							<li>Form Events</li>
+							<li>Frame/Object Events</li>
+							<li>Custom Events</li>
+							<li><b>Example</b></li>
+						</ul>
 					</section>
 
-				</section>
+				</section> <!-- END "EVENTS & USER INTERACTION" -->
 
 				<section class="stack present" data-background="#FFDDDD"> <!-- START "AJAX" -->
 
 					<section>
 						<h2>AJAX</h2>
+						<br>
+						<ul>
+							<li>What is AJAX?</li>
+							<li>HTTP Methods</li>
+							<li>GET Requests</li>
+							<li>POST Requests</li>
+							<li><b>Example</b></li>
+						</ul>
 					</section>
 
-				</section>
+				</section> <!-- END "AJAX" -->
 
 				<section class="stack present" data-background="#DDDDFF"> <!-- START "BASIC JQUERY" -->
 
 					<section>
 						<h2>Basic jQuery</h2>
+						<br>
+						<ul>
+							<li>What is jQuery?</li>
+							<li>Selecting Elements</li>
+							<li>DOM Manipulation</li>
+							<li>Event Listeners/Handlers</li>
+							<li>AJAX Requests</li>
+							<li><b>Example</b></li>
+						</ul>
 					</section>
 
-				</section>
+				</section> <!-- END "BASIC JQUERY" -->
+
+				<section class="stack present" data-background="#FFEEDD"> <!-- START "OBJECT-ORIENTED JAVASCRIPT" -->
+
+					<section>
+						<h2>Object-Oriented JavaScript</h2>
+						<br>
+						<ul>
+							<li>Object Review</li>
+							<li>Creating a "Class"</li>
+							<li>The <code>prototype</code></li>
+							<li>Inheritance</li>
+							<li><b>Example</b></li>
+						</ul>
+					</section>
+
+				</section> <!-- END "OBJECT-ORIENTED JAVASCRIPT" -->
 
 				<section class="stack present" data-background="#FFDDFF"> <!-- START "ADVANCED FUNCTIONS" -->
 
 					<section>
 						<h2>Advanced Functions</h2>
+						<br>
+						<ul>
+							<li>Function Scope</li>
+							<li>Closures</li>
+							<li>IEFF's</li>
+							<li>Function Context (<code>this</code>)</li>
+							<li>Named Functions</li>
+							<li>Anonymous Functions</li>
+							<li>Methods</li>
+							<li>Constructors</li>
+							<li><code>apply()</code> &amp; <code>call()</code></li>
+						</ul>
 					</section>
 
+				</section> <!-- END "ADVANCED FUNCTIONS" -->
+
+				<section>
+					<h2>What's Next?</h2>
+					<br>
+					<ul>
+						<li>Discover best practices!</li>
+						<li>Explore different frameworks!</li>
+						<li>Learn server-side programming with Node.js!</li>
+						<li><b>Do a project!</b></li>
+					</ul>
 				</section>
 
 				<section>
 					<h2>Resources</h2>
+					<br>
 					<ul>
-
+						<li><a href="http://www.w3schools.com/js/default.asp">w3schools</a></li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">Mozilla Developer Network (MDN)</a></li>
+						<li><a href="http://stackoverflow.com/questions/tagged/javascript">StackOverflow</a></li>
+						<li><a href="http://api.jquery.com/">jQuery Documentation</a></li>
+						<li><a href="http://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/193398869X/ref=sr_1_1?ie=UTF8&qid=1419973253&sr=8-1&keywords=secrets+of+the+javascript+ninja"><i>Secrets of the JavaScript Ninja</i></li>
+						<li><a href="http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742/ref=sr_1_2?ie=UTF8&qid=1419973253&sr=8-2&keywords=secrets+of+the+javascript+ninja"><i>JavaScript: The Good Parts</i></li>
+						<li><a href="https://www.youtube.com/playlist?list=PL7664379246A246CB">Crockford on JavaScript</a></li>
 					</ul>
 				</section>
 
