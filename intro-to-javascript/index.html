@@ -86,8 +86,8 @@
 						<li>A programming language used (primarily) for <br>client-side web development:</li>
 						<ul>
 							<li>DOM Manipulation</li>
-							<li>User Interaction</li>
-							<li>Asynchronous Communication</li>
+							<li>User Interaction (Events)</li>
+							<li>Asynchronous Communication (AJAX)</li>
 							<li>... And Much More!</li>
 						</ul>
 					</ul>
@@ -288,7 +288,7 @@ if (x !== "Hello") { console.log("Strings Don't Match!"); }
 					<h2>Using Arrays</h2>
 					<br>
 					<ul>
-						<li>Arrays are <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">"high-level, list-like objects"</a>.</li>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a> are "high-level, list-like objects."</li>
 						<li>Arrays can contain elements of any type!<br>
 							<pre><code class="hljs javascript" data-trim>
 // Instantiate the array
@@ -326,7 +326,7 @@ arr.splice(1, 1); // Anywhere
 						</li>
 					</ul></div>
 					<div class="half"><ul>
-						<li>Other usefull stuff<br>
+						<li>Other useful stuff<br>
 							<pre><code class="hljs javascript" data-trim>
 var arr = ["One", "Two", "Three"];
 arr.reverse(); // ["Three", "Two", "One"]
@@ -346,10 +346,86 @@ arr.indexOf("Three"); // -1 if not found
 
 				<section>
 					<h2>Using Objects</h2>
+					<br>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Objects</a> are key/value pairs.</li>
+						<li><b>Keys</b> are typically strings, <b>Values</b> can be any type!</li>
+					</ul>
+					<div class="half"><ul>
+						<li>Example 1<br>
+							<pre><code class="hljs javascript">
+// Create a new Car object
+var car = new Object(); // Object Constructor
+
+// Assign some "properties"
+car["make"] = "Tesla"; // Square bracket notation
+car.model = "Roadster"; // Dot notation
+car.year = 2014; // Keys can be any type
+
+// Create a "method"
+car.drive = function() {
+  console.log("Driving my " + 
+    this.make + " " + this["model"]);
+}
+							</code></pre>
+						</li>
+					</ul></div>
+					<div class="half"><ul>
+						<li>Example 2<br>
+							<pre><code class="hljs javascript">
+// Create a new Car object using a Literal
+var car =  {
+  make: "Tesla",
+  model: "Roadster",
+  year: 2014,
+  drive: function() {
+    console.log("Driving my " + 
+      this.make + " " + this["model"]);
+  }
+};
+							</code></pre>
+						</li>
+					</ul></div>
 				</section>
 
 				<section>
 					<h2>Using Functions</h2>
+					<br>
+					<ul>
+						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Functions</a> are first-class; can be passed like other objects</li>
+						<li>Unlike other objects, functions can be <b>invoked</b>.<br>
+						<li>Many different ways to declare and invoke functions:<br>
+								<pre><code class="hljs javascript">
+function doSomething() { ... } // Named function
+doSometing();
+
+var doSomething = function() { ... } // Also a named function
+doSomething();
+
+object.doSomething = doSomething; // Assign as a method
+object.doSomething();
+
+// Anonymous function, passed as a parameter to another function!
+button.addEventListener("click", function() { ... });
+							</code></pre>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>DOM Manipulation</h2>
+				</section>
+
+				<section>
+					<h2>Events &amp; User Interaction</h2>
+				</section>
+
+				<section>
+					<h2>AJAX</h2>
+				</section>
+
+				<section>
+					<h2>Advanced Functions</h2>
 				</section>
 
 			</div>
