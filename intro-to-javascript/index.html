@@ -67,7 +67,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section class="center">
+				<section>
 					<h2>Intro to JavaScript</h2>
 					<br>
 					<img height="300" src="img/JavaScript-logo.png">
@@ -80,14 +80,29 @@
 				</section>
 
 				<section>
+					<h2>Prerequisites</h2>
+					<br>
+					<ul>
+						<li><p>A basic knowledge of...</p>
+							<ul>
+								<li>HTTP (how the web works)</li>
+								<li>HTML and CSS (tags, selectors, etc)</li>
+								<li>Basic programming concepts (variables, functions, etc)</li>
+							</ul>
+						</li>
+						<li>An open mind is nice, too!</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>What Is JavaScript?</h2>
 					<br>
 					<ul>
 						<li>A programming language used (primarily) for <br>client-side web development:</li>
 						<ul>
-							<li>DOM Manipulation</li>
-							<li>User Interaction (Events)</li>
-							<li>Asynchronous Communication (AJAX)</li>
+							<li><a href="/#/5">DOM Manipulation</a></li>
+							<li><a href="/#/6">User Interaction (Event-driven)</a></li>
+							<li><a href="/#/7">Asynchronous Communication (AJAX)</a></li>
 							<li>... And Much More!</li>
 						</ul>
 					</ul>
@@ -108,87 +123,89 @@
 					<p><small>* Citation Needed</small></p>
 				</section>
 
-				<section class="center">
-					<h2>The Basics</h2>
-					<br>
-					<ul>
-						<li>Using JavaScript</li>
-						<li>Variables &amp; Types</li>
-						<li>Control Flow</li>
-						<li>Comparators</li>
-						<li>Using Arrays</li>
-						<li>Using Object</li>
-						<li>Using Functions</li>
-					</ul>
-				</section>
+				<section class="stack present" data-background="#DDFFFF"> <!-- START "THE BASICS" -->
 
-				<section>
-					<h2>Using JavaScript</h2>
-					<h5>(In the context of the broswer)</h5>
-					<br>
-					<ul>
-						<li>In a separate file included in an HTML document<br>
-							<pre><code class="hljs xml" data-trim>
+					<section>
+						<h2>The Basics</h2>
+						<br>
+						<ul>
+							<li>Using JavaScript</li>
+							<li>Variables &amp; Types</li>
+							<li>Control Flow</li>
+							<li>Comparators</li>
+							<li>Using Arrays</li>
+							<li>Using Object</li>
+							<li>Using Functions</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Using JavaScript</h2>
+						<h5>(In the context of the broswer)</h5>
+						<br>
+						<ul>
+							<li>In a separate file included in an HTML document<br>
+								<pre><code class="hljs xml" data-trim>
 &lt;script type="text/javascript" src="script.js"&gt;&lt;/script&gt;
-							</code></pre>
-						</li>
-						<li>In a &lt;script&gt; block in an HTML document<br>
-							<pre><code class="hljs xml" data-trim>
+								</code></pre>
+							</li>
+							<li>In a &lt;script&gt; block in an HTML document<br>
+								<pre><code class="hljs xml" data-trim>
 &lt;script type="text/javascript"&gt;
-  console.log("Hello, World!");
+	console.log("Hello, World!");
 &lt;/script&gt;
-							</code></pre>
-						<li>In an attribute of a DOM element
-							<pre><code class="hljs xml" data-trim>
+								</code></pre>
+							<li>In an attribute of a DOM element
+								<pre><code class="hljs xml" data-trim>
 &lt;button onclick="alert('Hello, World!');"&gt;Click Me&lt;/button&gt;
-							</code></pre>
-						</li>
-					</ul>
-				</section>
+								</code></pre>
+							</li>
+						</ul>
+					</section>
 
-				<section>
-					<h2>Variables &amp; Types</h2>
-					<br>
-					<ul>
-						<li>JavaScript is dynamically typed</li>
-						<li>All variables declared with <code>var</code> keyword</li>
-						<li>"Primitive" types</li>
-						<table>
-							<tbody>
-								<tr><td>Numbers</td><td><code> var x = 10;</code></td></tr>
-								<tr><td>Strings</td><td><code> var x = "Hello";</code></td></tr>
-								<tr><td>Booleans</td><td><code> var x = true;</code></td></tr>
-								<tr><td>Null</td><td><code> var x = null;</code></td></tr>
-								<tr><td>Undefined</td><td></td></tr>
-							</tbody>
-						</table>
-					</ul>
-				</section>
+					<section>
+						<h2>Variables &amp; Types</h2>
+						<br>
+						<ul>
+							<li>JavaScript is dynamically typed</li>
+							<li>All variables declared with <code>var</code> keyword</li>
+							<li>"Primitive" types</li>
+							<table>
+								<tbody>
+									<tr><td>Numbers</td><td><code> var x = 10;</code></td></tr>
+									<tr><td>Strings</td><td><code> var x = "Hello";</code></td></tr>
+									<tr><td>Booleans</td><td><code> var x = true;</code></td></tr>
+									<tr><td>Null</td><td><code> var x = null;</code></td></tr>
+									<tr><td>Undefined</td><td></td></tr>
+								</tbody>
+							</table>
+						</ul>
+					</section>
 
-				<section>
-					<h2>Variables &amp; Types</h2>
-					<br>
-					<ul>
-						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">"Everything is an object"</a> in JavaScript</li>
-						<li>Additional Object Types</li>
-						<table>
-							<tbody>
-								<tr><td>Arrays</td><td><code> var x = [];</code></td></tr>
-								<tr><td>Objects</td><td><code> var x = {key:"value"};</code></td></tr>
-								<tr><td>Regex</td><td><code> var x = /pattern/;</code></td></tr>
-								<tr><td>Functions</td><td><code> var x = function() {};</code></td></tr>
-								<tr><td colspan="2">Maths, Dates, and more!<td></tr>
-							</tbody>
-						</table>
-					</ul>
-				</section>
+					<section>
+						<h2>Variables &amp; Types</h2>
+						<br>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">"Everything is an object"</a> in JavaScript</li>
+							<li>Additional Object Types</li>
+							<table>
+								<tbody>
+									<tr><td>Arrays</td><td><code> var x = [];</code></td></tr>
+									<tr><td>Objects</td><td><code> var x = {key:"value"};</code></td></tr>
+									<tr><td>Regex</td><td><code> var x = /pattern/;</code></td></tr>
+									<tr><td>Functions</td><td><code> var x = function() {};</code></td></tr>
+									<tr><td colspan="2">Maths, Dates, and more!<td></tr>
+								</tbody>
+							</table>
+						</ul>
+					</section>
 
-				<section>
-					<h2>Control Flow</h2>
-					<br>
-					<div class="half"><ul>
-						<li><code>if</code> statements<br>
-							<pre><code class="hljs javascript" data-trim>
+					<section>
+						<h2>Control Flow</h2>
+						<br>
+						<div class="half"><ul>
+							<li><code>if</code> statements<br>
+								<pre><code class="hljs javascript" data-trim>
 if (x === "Hello") {
   console.log("Greetings!");
 }
@@ -198,12 +215,12 @@ else if (x === "Goodbye") {
 else {
   	console.log("What was that?");
 }
-							</code></pre>
-						</li>
-					</ul></div>
-					<div class="half"><ul>
-						<li><code>switch</code> statements<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+						</ul></div>
+						<div class="half"><ul>
+							<li><code>switch</code> statements<br>
+								<pre><code class="hljs javascript" data-trim>
 switch(x) {
   case 0:
   case 1:
@@ -215,82 +232,82 @@ switch(x) {
   default:
    console.log("Default!");
 }
-							</code></pre>
-						</li>
-					</ul></div>
-				</section>
+								</code></pre>
+							</li>
+						</ul></div>
+					</section>
 
-				<section>
-					<h2>Control Flow</h2>
-					<br>
-					<div class="half"><ul>
-						<li><code>while</code> loop<br>
-							<pre><code class="hljs javascript" data-trim>
+					<section>
+						<h2>Control Flow</h2>
+						<br>
+						<div class="half"><ul>
+							<li><code>while</code> loop<br>
+								<pre><code class="hljs javascript" data-trim>
 var i = 0;
 while (i &lt; 10) {
   console.log(i);
   i++;
 }
-							</code></pre>
-						</li>
-						<li><code>for</code> loop<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+							<li><code>for</code> loop<br>
+								<pre><code class="hljs javascript" data-trim>
 for (var i = 0; i &lt; 10; i++) {
   console.log(i);
 }
-							</code></pre>
-						</li>
-					</ul></div>
-					<div class="half"><ul>
-						<li><code>for in</code> loop (for Objects)<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+						</ul></div>
+						<div class="half"><ul>
+							<li><code>for in</code> loop (for Objects)<br>
+								<pre><code class="hljs javascript" data-trim>
 for (var key in obj) {
   // Avoid iterating over prototype properties
   if (obj.hasOwnProperty(key)) {
     console.log(key);
   }
 }
-							</code></pre>
-						</li>
-						<li><code>for each</code> loop (for Arrays)<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+							<li><code>for each</code> loop (for Arrays)<br>
+								<pre><code class="hljs javascript" data-trim>
 var arr = ["A", "B", "C"];
 arr.forEach(function(value, index, array) {
   console.log(value);
 });
-							</code></pre>
-						</li>
-					</ul></div>
-				</section>
+								</code></pre>
+							</li>
+						</ul></div>
+					</section>
 
-				<section>
-					<h2>Comparators</h2>
-					<br>
-					<ul>
-						<li>"Falsy" values: <code>0, false, undefined</code></li>
-						<li>"Truthy" values: everything else</li>
-						<li>Use "==" or "!=" to compare value<br>
-							<pre><code class="hljs javascript" data-trim>
+					<section>
+						<h2>Comparators</h2>
+						<br>
+						<ul>
+							<li>"Falsy" values: <code>0, false, undefined</code></li>
+							<li>"Truthy" values: everything else</li>
+							<li>Use "==" or "!=" to compare value<br>
+								<pre><code class="hljs javascript" data-trim>
 if (x == true) { console.log("Truthy!"); } // Shorthand: if (x) {}
 if (x != true) { console.log("Falsy!"); } // Shorthand: if (!x) {}
-							</code></pre>
-						</li>
-						<li>Use "===" or "!==" to compare value AND type<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+							<li>Use "===" or "!==" to compare value AND type<br>
+								<pre><code class="hljs javascript" data-trim>
 if (typeof x === "undefined") { console.log("Undefined!"); }
 if (x !== "Hello") { console.log("Strings Don't Match!"); }
-							</code></pre>
-						</li>
-					</ul>
-				</section>
+								</code></pre>
+							</li>
+						</ul>
+					</section>
 
-				<section>
-					<h2>Using Arrays</h2>
-					<br>
-					<ul>
-						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a> are "high-level, list-like objects."</li>
-						<li>Arrays can contain elements of any type!<br>
-							<pre><code class="hljs javascript" data-trim>
+					<section>
+						<h2>Using Arrays</h2>
+						<br>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a> are "high-level, list-like objects."</li>
+							<li>Arrays can contain elements of any type!<br>
+								<pre><code class="hljs javascript" data-trim>
 // Instantiate the array
 var arr = new Array("One", "Two", "Three"); // Array Constructor
 var arr = ["One", "Two", "Three"]; // Array Literal
@@ -299,35 +316,35 @@ var arr = ["One", "Two", "Three"]; // Array Literal
 var length = arr.length; // Get array length 
 var first = arr[0]; // Access elements by index
 console.log(arr); // Print array
-							</code></pre>
-						</li>
-					</ul>
-				</section>
+								</code></pre>
+							</li>
+						</ul>
+					</section>
 
-				<section>
-					<h2>Using Arrays</h2>
-					<br>
-					<div class="half"><ul>
-						<li>Adding elements<br>
-							<pre><code class="hljs javascript" data-trim>
+					<section>
+						<h2>Using Arrays</h2>
+						<br>
+						<div class="half"><ul>
+							<li>Adding elements<br>
+								<pre><code class="hljs javascript" data-trim>
 var arr = ["One", "Two", "Three"];
 arr.push("Four"); // End
 arr.unshift("Zero"); // Beginning
 arr.splice(1, 0, "One Half"); // Anywhere
-							</code></pre>
-						</li>
-						<li>Removing Elements<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+							<li>Removing Elements<br>
+								<pre><code class="hljs javascript" data-trim>
 var arr = ["One", "Two", "Three"];
 arr.pop(); // End
 arr.shift(); // Beginning
 arr.splice(1, 1); // Anywhere
-							</code></pre>
-						</li>
-					</ul></div>
-					<div class="half"><ul>
-						<li>Other useful stuff<br>
-							<pre><code class="hljs javascript" data-trim>
+								</code></pre>
+							</li>
+						</ul></div>
+						<div class="half"><ul>
+							<li>Other useful stuff<br>
+								<pre><code class="hljs javascript" data-trim>
 var arr = ["One", "Two", "Three"];
 arr.reverse(); // ["Three", "Two", "One"]
 arr.sort(); // ["One", "Three", "Two"]
@@ -339,21 +356,21 @@ arr.sort(function(a,b) {
 arr.join(); // "One,Two,Three"
 arr.concat(["Eight", "Nine", "Ten"]);
 arr.indexOf("Three"); // -1 if not found
-							</code></pre>
-						</li>
-					</ul></div>
-				</section>
+								</code></pre>
+							</li>
+						</ul></div>
+					</section>
 
-				<section>
-					<h2>Using Objects</h2>
-					<br>
-					<ul>
-						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Objects</a> are key/value pairs.</li>
-						<li><b>Keys</b> are typically strings, <b>Values</b> can be any type!</li>
-					</ul>
-					<div class="half"><ul>
-						<li>Example 1<br>
-							<pre><code class="hljs javascript">
+					<section>
+						<h2>Using Objects</h2>
+						<br>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Objects</a> are key/value pairs.</li>
+							<li><b>Keys</b> are typically strings, <b>Values</b> can be any type!</li>
+						</ul>
+						<div class="half"><ul>
+							<li>Example 1<br>
+								<pre><code class="hljs javascript">
 // Create a new Car object
 var car = new Object(); // Object Constructor
 
@@ -367,12 +384,12 @@ car.drive = function() {
   console.log("Driving my " + 
     this.make + " " + this["model"]);
 }
-							</code></pre>
-						</li>
-					</ul></div>
-					<div class="half"><ul>
-						<li>Example 2<br>
-							<pre><code class="hljs javascript">
+								</code></pre>
+							</li>
+						</ul></div>
+						<div class="half"><ul>
+							<li>Example 2<br>
+								<pre><code class="hljs javascript">
 // Create a new Car object using a Literal
 var car =  {
   make: "Tesla",
@@ -383,19 +400,19 @@ var car =  {
       this.make + " " + this["model"]);
   }
 };
-							</code></pre>
-						</li>
-					</ul></div>
-				</section>
+								</code></pre>
+							</li>
+						</ul></div>
+					</section>
 
-				<section>
-					<h2>Using Functions</h2>
-					<br>
-					<ul>
-						<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Functions</a> are first-class; can be passed like other objects</li>
-						<li>Unlike other objects, functions can be <b>invoked</b>.<br>
-						<li>Many different ways to declare and invoke functions:<br>
-								<pre><code class="hljs javascript">
+					<section>
+						<h2>Using Functions</h2>
+						<br>
+						<ul>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Functions</a> are first-class; can be passed like other objects</li>
+							<li>Unlike other objects, functions can be <b>invoked</b>.<br>
+							<li>Many different ways to declare and invoke functions:<br>
+									<pre><code class="hljs javascript">
 function doSomething() { ... } // Named function
 doSometing();
 
@@ -407,25 +424,66 @@ object.doSomething();
 
 // Anonymous function, passed as a parameter to another function!
 button.addEventListener("click", function() { ... });
-							</code></pre>
-						</li>
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+
+				</section> <!-- END "THE BASICS" -->
+
+				<section class="stack present" data-background="#DDFFDD"> <!-- START "DOM MANIPULATION" -->
+
+					<section>
+						<h2>DOM Manipulation</h2>
+					</section>
+
+				</section>
+
+				<section class="stack present" data-background="#FFFFDD"> <!-- START "DOM MANIPULATION" -->
+
+					<section>
+						<h2>Events &amp; User Interaction</h2>
+					</section>
+
+				</section>
+
+				<section class="stack present" data-background="#FFDDDD"> <!-- START "AJAX" -->
+
+					<section>
+						<h2>AJAX</h2>
+					</section>
+
+				</section>
+
+				<section class="stack present" data-background="#DDDDFF"> <!-- START "BASIC JQUERY" -->
+
+					<section>
+						<h2>Basic jQuery</h2>
+					</section>
+
+				</section>
+
+				<section class="stack present" data-background="#FFDDFF"> <!-- START "ADVANCED FUNCTIONS" -->
+
+					<section>
+						<h2>Advanced Functions</h2>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Resources</h2>
+					<ul>
+
 					</ul>
 				</section>
 
 				<section>
-					<h2>DOM Manipulation</h2>
-				</section>
-
-				<section>
-					<h2>Events &amp; User Interaction</h2>
-				</section>
-
-				<section>
-					<h2>AJAX</h2>
-				</section>
-
-				<section>
-					<h2>Advanced Functions</h2>
+					<h2>Questions?</h2>
+					<br><br><br>
+					<p><a href="http://bencentra.com">Ben Centra</a></p>
+					<p><a href="http://twitter.com/TheBenCentra">@TheBenCentra</a></p>
+					<p><a href="mailto:blcentra@gmail.com"</a>blcentra@gmail.com</a></p>
 				</section>
 
 			</div>
