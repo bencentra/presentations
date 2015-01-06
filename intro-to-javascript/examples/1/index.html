@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <title>Example #1: Intro to JavaScript</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    td, th {
+      font-size: 1.25em;
+      padding: 5px 10px;
+    }
+    .star {
+      padding: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Content -->
+  <div class="container">
+    <h1>Intro to JavaScript Example #1<br><small>DOM Manipulation</small></h1>
+    <hr>
+    <h3>Ben's Beer List</h3>
+    <div id="target"></div>
+  </div>
+  <!-- Scripts -->
+  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <!--<script src="//code.angularjs.org/snapshot/angular.min.js"></script>-->
+  <script>
+    // Create the table when the document is ready
+    document.addEventListener("DOMContentLoaded", function() {
+      // Array of beer objects
+      var beers = [
+        {
+          name: "Dogfish Head 60 Minute IPA",
+          type: "American IPA",
+          url: "http://www.beeradvocate.com/beer/profile/45/148/",
+          rating: 5
+        },
+        {
+          name: "Brooklyn Lager",
+          type: "American Amber Lager",
+          url: "http://www.beeradvocate.com/beer/profile/64/6108/",
+          rating: 4
+        },
+        {
+          name: "Weihenstephaner Hefeweissbier",
+          type: "Hefeweizen",
+          url: "http://www.beeradvocate.com/beer/profile/252/731/",
+          rating: 4
+        },
+        {
+          name: "Blue Moon Belgian White",
+          type: "Witbier",
+          url: "http://www.beeradvocate.com/beer/profile/306/1212/",
+          rating: 3
+        },
+        {
+          name: "Bud Light",
+          type: "Light Lager",
+          url: "http://www.beeradvocate.com/beer/profile/29/1320/",
+          rating: 1
+        }
+      ];
+      // Get a handle to the target div
+      var target = document.querySelector("#target");
+      // Create a table element to display the beers
+      var table = document.createElement("table");
+      var header = document.createElement("tr");
+      header.innerHTML = "<th>Name</th><th>Type</th><th>Rating</th>";
+      table.appendChild(header);
+      // Loop through each beer object in the beers array
+      for (var i = 0; i < beers.length; i++) {
+        var beer = beers[i];
+        // Create a new table row
+        var row = document.createElement("tr");
+        // Create a table cell for the name
+        var name = document.createElement("td");
+        var link = document.createElement("a");
+        link.setAttribute("href", beer["url"]);
+        link.appendChild(document.createTextNode(beer["name"]));
+        name.appendChild(link);
+        row.appendChild(name);
+        // Create a table cell for the type
+        var type = document.createElement("td");
+        type.appendChild(document.createTextNode(beer["type"]));
+        row.appendChild(type);
+        // Create a table cell for the rating
+        var rating = document.createElement("td");
+        for (var j = 0; j < beer["rating"]; j++) {
+          var star = document.createElement("img");
+          star.setAttribute("src", "img/star-icon.png");
+          star.setAttribute("class", "star");
+          star.setAttribute("width", "32");
+          star.setAttribute("height", "32");
+          rating.appendChild(star);
+        }
+        row.appendChild(rating);
+        // Append the row to the table
+        table.appendChild(row);
+      }
+      // Append the table to the target div
+      target.appendChild(table);
+    });
+  </script>
+</body>
+</html>

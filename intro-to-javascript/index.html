@@ -337,8 +337,8 @@ arr.forEach(function(value, index, array) {
 						<h2>Truthiness</h2>
 						<br>
 						<ul>
-							<li>"Falsy" values: <code>0, false, undefined, null, NaN</code></li>
-							<li>"Truthy" values: everything else</li>
+							<li>"Falsy": <code>0, false, [], undefined, null, NaN</code></li>
+							<li>"Truthy": everything else</li>
 							<li>Use "==" or "!=" to compare value<br>
 								<pre><code class="hljs javascript" data-trim>
 if (x == true) { console.log("Truthy!"); } // Shorthand: if (x) {}
@@ -427,12 +427,12 @@ arr.indexOf("Three"); // -1 if not found
 							<li>Example 1<br>
 								<pre><code class="hljs javascript">
 // Create a new Car object
-var car = new Object(); // Object Constructor
+var car = new Object();
 
 // Assign some "properties"
-car["make"] = "Tesla"; // Square bracket notation (preferred)
-car.model = "Roadster"; // Dot notation (watch for keywords!)
-car.year = 2014; // Keys can be any type
+car["make"] = "Tesla"; 
+car.model = "Roadster"; 
+car.year = 2014; 
 
 // Create a "method"
 car.drive = function() {
@@ -499,6 +499,25 @@ button.addEventListener("click", function() { ... });
 							<li>Updating Elements</li>
 							<li>Creating Elements</li>
 							<li><b>Example</b></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>What is the DOM</h2>
+						<br>
+						<ul>
+							<li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a> connects web pages to scrips.</li>
+							<li>HTML document elements represented as a tree of nodes.</li>
+							<li>Nodes have properties, methods, and events.</li>
+						</ul>
+						<img src="img/dom_tree.gif" style="border: 3px solid white;" width="600"/>
+					</section>
+
+					<section>
+						<h2></h2>
+						<br>
+						<ul>
+							<li></li>
 						</ul>
 					</section>
 
